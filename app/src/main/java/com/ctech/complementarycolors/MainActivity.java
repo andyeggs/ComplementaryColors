@@ -1,8 +1,10 @@
 package com.ctech.complementarycolors;
 
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -63,5 +65,26 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     }
     public void onStopTrackingTouch(SeekBar seekBar) {
         //Only required due to implements
+    }
+    //Handle button
+    public void Picker1Click(View arg0) {
+        //no direct way to get background color as it could be a drawable
+        if (ShowColor.getBackground() instanceof ColorDrawable) {
+            ColorDrawable cd = (ColorDrawable) ShowColor.getBackground();
+            int colorCode = cd.getColor();
+            //pick a color (changed in the UpdateColor listener)
+            new ColorPickerDialog(MainActivity.this, new UpdateColor(), colorCode).show();
+        }
+    }
+    public class UpdateColor implements ColorPickerDialog.OnColorChangedListener {
+        public void colorChanged(int color) {
+            //ShowColor.setBackgroundColor(color);
+            //show the color value
+            ShowColor.setText("0x"+String.format("%08x", color));
+            SeekA.setProgress(Color.alpha(color));
+            SeekR.setProgress(Color.red(color));
+            SeekG.setProgress(Color.green(color));
+            SeekB.setProgress(Color.blue(color));
+        }
     }
 }

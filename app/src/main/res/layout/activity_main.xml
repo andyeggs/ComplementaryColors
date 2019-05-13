@@ -4,11 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="5dp"
-    tools:context="com.example.colorpicker.MainActivity">
+    tools:context="com.ctech.complementarycolors.MainActivity">
+    <Button
+        android:id="@+id/buttonA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Picker 1"
+        android:onClick="Picker1Click" />
     <TextView
         android:id="@+id/labelA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/buttonA"
         android:text="A"
         android:textAppearance="?android:attr/textAppearanceMedium" />
     <SeekBar
