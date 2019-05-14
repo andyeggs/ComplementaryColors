@@ -5,17 +5,10 @@
     android:layout_height="match_parent"
     android:layout_margin="5dp"
     tools:context="com.ctech.complementarycolors.MainActivity">
-    <Button
-        android:id="@+id/buttonA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Picker 1"
-        android:onClick="Picker1Click" />
     <TextView
         android:id="@+id/labelR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/buttonA"
         android:text="R"
         android:textAppearance="?android:attr/textAppearanceMedium" />
     <SeekBar
@@ -68,6 +61,13 @@
         android:layout_marginBottom="0dp"
         android:background="@android:color/darker_gray"
         android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Picker 1"
+            android:onClick="Picker1Click" />
 
         <TextView
             android:id="@+id/textView"
