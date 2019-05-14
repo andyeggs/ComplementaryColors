@@ -56,7 +56,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/labelB"
+        android:layout_below="@+id/seekB"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="0dp"
         android:background="@android:color/darker_gray"
@@ -64,23 +64,17 @@
 
         <Button
             android:id="@+id/buttonA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Picker 1"
-            android:onClick="Picker1Click" />
-
-        <TextView
-            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/labelB"
             android:layout_centerHorizontal="true"
             android:layout_margin="24dp"
             android:background="@android:color/white"
             android:padding="24dp"
-            android:text="0xffffffff"
+            android:text="ffffff"
             android:textAlignment="center"
             android:textColor="@android:color/black"
-            android:textSize="36dp" />
+            android:textSize="36dp"
+            android:onClick="Picker1Click" />
+
     </LinearLayout>
 </RelativeLayout>

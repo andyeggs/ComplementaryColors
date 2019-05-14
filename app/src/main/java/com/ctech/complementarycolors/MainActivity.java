@@ -5,6 +5,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         SeekG=(SeekBar)findViewById(R.id.seekG);
         SeekB=(SeekBar)findViewById(R.id.seekB);
         //Reference the TextView
-        ShowColor=(TextView)findViewById(R.id.textView);
+        ShowColor=(Button)findViewById(R.id.buttonA);
         //This activity implements SeekBar OnSeekBarChangeListener
         SeekR.setOnSeekBarChangeListener(this);
         SeekG.setOnSeekBarChangeListener(this);
