@@ -12,25 +12,10 @@
         android:text="Picker 1"
         android:onClick="Picker1Click" />
     <TextView
-        android:id="@+id/labelA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/buttonA"
-        android:text="A"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-    <SeekBar
-        android:id="@+id/seekA"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/labelA"
-        android:layout_toRightOf="@id/labelA"
-        android:max="255"
-        android:progress="255" />
-    <TextView
         android:id="@+id/labelR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/labelA"
+        android:layout_below="@id/buttonA"
         android:text="R"
         android:textAppearance="?android:attr/textAppearanceMedium" />
     <SeekBar
@@ -38,7 +23,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/labelR"
-        android:layout_below="@+id/seekA"
         android:layout_toRightOf="@+id/labelR"
         android:max="255"
         android:progress="255" />
