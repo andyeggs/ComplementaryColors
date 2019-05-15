@@ -5,12 +5,21 @@
     android:layout_height="match_parent"
     android:layout_margin="5dp"
     tools:context="com.ctech.complementarycolors.MainActivity">
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Complementary Colors"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
     <TextView
         android:id="@+id/labelR"
-        android:layout_width="wrap_content"
+        android:layout_width="47dp"
         android:layout_height="wrap_content"
-        android:text="R"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:text="Red"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@id/Title"/>
     <SeekBar
         android:id="@+id/seekR"
         android:layout_width="match_parent"
@@ -24,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/labelR"
-        android:text="G"
+        android:text="Green"
         android:textAppearance="?android:attr/textAppearanceMedium" />
     <SeekBar
         android:id="@+id/seekG"
@@ -35,12 +44,14 @@
         android:layout_toRightOf="@+id/labelG"
         android:max="255"
         android:progress="255" />
+
     <TextView
         android:id="@+id/labelB"
-        android:layout_width="wrap_content"
+        android:layout_width="47dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/labelG"
-        android:text="B"
+        android:layout_marginTop="0dp"
+        android:text="Blue"
         android:textAppearance="?android:attr/textAppearanceMedium" />
     <SeekBar
         android:id="@+id/seekB"
@@ -52,12 +63,20 @@
         android:max="255"
         android:progress="255" />
 
+    <EditText
+        android:id="@+id/hexEdit"
+        android:layout_width="159dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekB"
+        android:layout_marginTop="20dp"
+        android:hint="Enter Hex" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/seekB"
-        android:layout_marginTop="0dp"
+        android:layout_below="@+id/hexEdit"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="0dp"
         android:background="@android:color/darker_gray"
         android:orientation="horizontal">
@@ -69,12 +88,90 @@
             android:layout_centerHorizontal="true"
             android:layout_margin="24dp"
             android:background="@android:color/white"
+            android:onClick="Picker1Click"
             android:padding="24dp"
             android:text="ffffff"
             android:textAlignment="center"
             android:textColor="@android:color/black"
-            android:textSize="36dp"
-            android:onClick="Picker1Click" />
+            android:textSize="36dp" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_marginTop="21dp"
+        android:text="Submit" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonR"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:text="Red:" />
+
+    <TextView
+        android:id="@+id/resultR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout="@+id/textView2"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonR"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="55dp"
+        android:text="Green:" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonR"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="78dp"
+        android:text="Blue:" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonR"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="103dp"
+        android:text="Hex:" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView6"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="0dp"
+        android:background="@android:color/darker_gray"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttond"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="24dp"
+            android:background="@android:color/white"
+            android:onClick="none"
+            android:padding="24dp"
+            android:text="ffffff"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="36dp" />
+
+    </LinearLayout>
+
 </RelativeLayout>

@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                 +String.format("%02x", G)+String.format("%02x", B));
         //some math so text shows (needs improvement for greys)
         ShowColor.setTextColor(Color.rgb(255-R,255-G,255-B));
+
     }
     public void onStartTrackingTouch(SeekBar seekBar) {
         //Only required due to implements
