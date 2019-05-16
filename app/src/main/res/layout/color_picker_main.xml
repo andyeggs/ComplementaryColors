@@ -6,6 +6,19 @@
     android:layout_margin="5dp"
     tools:context="com.ctech.complementarycolors.MainActivity">
 
+    <SeekBar
+        android:id="@+id/seekResultB"
+        android:layout_width="267dp"
+        android:layout_height="22dp"
+        android:layout_below="@+id/seekR"
+        android:layout_alignBottom="@id/labelG"
+        android:layout_marginLeft="86dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginBottom="-372dp"
+        android:layout_toRightOf="@+id/labelG"
+        android:max="255"
+        android:progress="255" />
+
     <TextView
         android:id="@+id/Title"
         android:layout_width="match_parent"
@@ -27,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/labelR"
         android:layout_marginLeft="50dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="3dp"
         android:layout_toRightOf="@+id/labelR"
         android:max="255"
         android:progress="255" />
@@ -47,6 +60,32 @@
         android:layout_alignBottom="@id/labelG"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="0dp"
+        android:layout_toRightOf="@+id/labelG"
+        android:max="255"
+        android:progress="255" />
+
+    <SeekBar
+        android:id="@+id/seekResultG"
+        android:layout_width="267dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekR"
+        android:layout_alignBottom="@id/labelG"
+        android:layout_marginLeft="86dp"
+        android:layout_marginTop="355dp"
+        android:layout_marginBottom="-350dp"
+        android:layout_toRightOf="@+id/labelG"
+        android:max="255"
+        android:progress="255" />
+
+    <SeekBar
+        android:id="@+id/seekResultR"
+        android:layout_width="267dp"
+        android:layout_height="22dp"
+        android:layout_below="@+id/seekR"
+        android:layout_alignBottom="@id/labelG"
+        android:layout_marginLeft="86dp"
+        android:layout_marginTop="333dp"
+        android:layout_marginBottom="-325dp"
         android:layout_toRightOf="@+id/labelG"
         android:max="255"
         android:progress="255" />
@@ -78,7 +117,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/seekB"
         android:layout_marginTop="20dp"
-        android:hint="Enter Hex" />
+        android:hint="Enter Hex"
+        android:inputType="number" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -127,7 +167,7 @@
         android:layout_below="@+id/buttonR"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="10dp"
-        android:text="TextView"
+        android:text="000"
         android:textSize="18sp" />
 
     <TextView
@@ -137,7 +177,7 @@
         android:layout_below="@+id/buttonR"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="34dp"
-        android:text="TextView"
+        android:text="000"
         android:textSize="18sp" />
 
     <TextView
@@ -147,7 +187,7 @@
         android:layout_below="@+id/buttonR"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="58dp"
-        android:text="TextView"
+        android:text="000"
         android:textSize="18sp" />
 
     <TextView
@@ -157,7 +197,7 @@
         android:layout_below="@+id/buttonR"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="82dp"
-        android:text="TextView"
+        android:text="000"
         android:textSize="18sp" />
 
     <TextView
@@ -219,7 +259,30 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:layout_below="@+id/Title"/>
+        android:layout_below="@+id/Title"
+        android:layout_marginLeft="57dp"
+        android:layout_marginTop="25dp"
+        android:text="000"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Title"
+        android:layout_marginLeft="57dp"
+        android:layout_marginTop="1dp"
+        android:text="000"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Title"
+        android:layout_marginLeft="57dp"
+        android:layout_marginTop="48dp"
+        android:text="000"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
 </RelativeLayout>

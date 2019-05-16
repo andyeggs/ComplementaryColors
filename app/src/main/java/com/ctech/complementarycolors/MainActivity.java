@@ -1,5 +1,6 @@
 package com.ctech.complementarycolors;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
@@ -9,17 +10,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.view.View.OnClickListener;
 
 public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
     //Reference the seek bars
     SeekBar SeekR;
     SeekBar SeekG;
     SeekBar SeekB;
+    SeekBar seekResultR;
+    SeekBar seekResultG;
+    SeekBar seekResultB;
     //Reference the TextView
     TextView ShowColor;
     Button ShowComp;
     TextView ShowHex;
     EditText ChangeHex;
+    Button SubmitButton;
 
 
 
@@ -31,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         SeekR=(SeekBar)findViewById(R.id.seekR);
         SeekG=(SeekBar)findViewById(R.id.seekG);
         SeekB=(SeekBar)findViewById(R.id.seekB);
+        seekResultR=(SeekBar)findViewById(R.id.seekResultR);
+        seekResultG=(SeekBar)findViewById(R.id.seekResultG);
+        seekResultB=(SeekBar)findViewById(R.id.seekResultB);
         //Reference the TextView
         ShowColor=(Button)findViewById(R.id.buttonA);
         ShowComp=(Button)findViewById(R.id.buttonD);
@@ -40,7 +49,16 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         SeekR.setOnSeekBarChangeListener(this);
         SeekG.setOnSeekBarChangeListener(this);
         SeekB.setOnSeekBarChangeListener(this);
+        SubmitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String value = ChangeHex.getText().toString();
+                int enteredText = Integer.parseInt(value);
+                ShowColor.setBackgroundColor(Color.parseColor("#" + enteredText));
+            }
+        });
     }
+
     //Satisfy the implements
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromTouch) {
         //get current RGB values
@@ -68,6 +86,9 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         //some math so text shows (needs improvement for greys)
         ChangeHex.setHint(String.format("%02x", R)
                 +String.format("%02x", G)+String.format("%02x", B));
+        seekResultR.setProgress(T);
+        seekResultG.setProgress(C);
+        seekResultB.setProgress(E);
 
     }
     public void onStartTrackingTouch(SeekBar seekBar) {
