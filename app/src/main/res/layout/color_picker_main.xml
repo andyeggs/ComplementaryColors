@@ -20,11 +20,14 @@
         android:text="Red"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_below="@id/Title"/>
+
     <SeekBar
         android:id="@+id/seekR"
-        android:layout_width="match_parent"
+        android:layout_width="305dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/labelR"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="0dp"
         android:layout_toRightOf="@+id/labelR"
         android:max="255"
         android:progress="255" />
@@ -35,12 +38,15 @@
         android:layout_below="@id/labelR"
         android:text="Green"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
     <SeekBar
         android:id="@+id/seekG"
-        android:layout_width="match_parent"
+        android:layout_width="305dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/labelG"
         android:layout_below="@+id/seekR"
+        android:layout_alignBottom="@id/labelG"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="0dp"
         android:layout_toRightOf="@+id/labelG"
         android:max="255"
         android:progress="255" />
@@ -53,12 +59,15 @@
         android:layout_marginTop="0dp"
         android:text="Blue"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
     <SeekBar
         android:id="@+id/seekB"
-        android:layout_width="match_parent"
+        android:layout_width="305dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/labelB"
         android:layout_below="@+id/seekG"
+        android:layout_alignBottom="@id/labelB"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="0dp"
         android:layout_toRightOf="@+id/labelB"
         android:max="255"
         android:progress="255" />
@@ -89,11 +98,7 @@
             android:layout_margin="24dp"
             android:background="@android:color/white"
             android:onClick="Picker1Click"
-            android:padding="24dp"
-            android:text="ffffff"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="36dp" />
+            android:padding="24dp" />
 
     </LinearLayout>
 
@@ -106,31 +111,64 @@
         android:text="Submit" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/resultRed"
         android:layout_width="45dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonR"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="30dp"
-        android:text="Red:" />
+        android:layout_marginTop="10dp"
+        android:text="Red:"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/resultR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonR"
-        android:layout_marginTop="29dp"
-        android:layout_marginLeft="90dp"
-        android:text="TextView" />
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/resultR2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonR"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="34dp"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/resultR3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonR"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="58dp"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/resultHex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonR"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="82dp"
+        android:text="TextView"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="45dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonR"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="55dp"
-        android:text="Green:" />
+        android:layout_marginTop="34dp"
+        android:text="Green:"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView5"
@@ -138,8 +176,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonR"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="78dp"
-        android:text="Blue:" />
+        android:layout_marginTop="58dp"
+        android:text="Blue:"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView6"
@@ -147,8 +186,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonR"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="103dp"
-        android:text="Hex:" />
+        android:layout_marginTop="82dp"
+        android:text="Hex:"
+        android:textSize="18sp" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -161,19 +201,25 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/buttond"
+            android:id="@+id/buttonD"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
             android:layout_margin="24dp"
             android:background="@android:color/white"
-            android:onClick="none"
+            android:clickable="false"
             android:padding="24dp"
-            android:text="ffffff"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="36dp" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_below="@+id/Title"/>
 
 </RelativeLayout>

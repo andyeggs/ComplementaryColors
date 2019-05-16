@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -16,6 +17,11 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     SeekBar SeekB;
     //Reference the TextView
     TextView ShowColor;
+    Button ShowComp;
+    TextView ShowHex;
+    EditText ChangeHex;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,9 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         SeekB=(SeekBar)findViewById(R.id.seekB);
         //Reference the TextView
         ShowColor=(Button)findViewById(R.id.buttonA);
+        ShowComp=(Button)findViewById(R.id.buttonD);
+        ShowHex=(TextView)findViewById(R.id.resultHex);
+        ChangeHex=(EditText)findViewById(R.id.hexEdit);
         //This activity implements SeekBar OnSeekBarChangeListener
         SeekR.setOnSeekBarChangeListener(this);
         SeekG.setOnSeekBarChangeListener(this);
@@ -38,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         int R=SeekR.getProgress();
         int G=SeekG.getProgress();
         int B=SeekB.getProgress();
+        int T=255-R;
+        int C=255-G;
+        int E=255-B;
         //Reference the value changing
         int id=seekBar.getId();
         //Get the chnaged value
@@ -49,11 +61,13 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             B=progress;
         //Build and show the new color
         ShowColor.setBackgroundColor(Color.rgb(R,G,B));
+        ShowComp.setBackgroundColor(Color.rgb(255-R,255-G,255-B));
         //show the color value
-        ShowColor.setText(String.format("%02x", R)
-                +String.format("%02x", G)+String.format("%02x", B));
+        ShowHex.setText(String.format("%02x", T)
+                +String.format("%02x", C)+String.format("%02x", E));
         //some math so text shows (needs improvement for greys)
-        ShowColor.setTextColor(Color.rgb(255-R,255-G,255-B));
+        ChangeHex.setHint(String.format("%02x", R)
+                +String.format("%02x", G)+String.format("%02x", B));
 
     }
     public void onStartTrackingTouch(SeekBar seekBar) {
