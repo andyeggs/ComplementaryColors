@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     Button ShowComp;
     TextView ShowHex;
     EditText ChangeHex;
-    Button SubmitButton;
 
 
 
@@ -49,14 +50,28 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         SeekR.setOnSeekBarChangeListener(this);
         SeekG.setOnSeekBarChangeListener(this);
         SeekB.setOnSeekBarChangeListener(this);
-        SubmitButton.setOnClickListener(new View.OnClickListener() {
+        String content = ChangeHex.getText().toString(); //gets you the contents of edit text
+
+        ChangeHex.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onClick(View v) {
-                String value = ChangeHex.getText().toString();
-                int enteredText = Integer.parseInt(value);
-                ShowColor.setBackgroundColor(Color.parseColor("#" + enteredText));
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                ShowColor.setBackgroundColor(Color.parseColor("#ffffff"));
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                // TODO Auto-generated method stub
             }
         });
+
+
     }
 
     //Satisfy the implements
@@ -84,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         ShowHex.setText(String.format("%02x", T)
                 +String.format("%02x", C)+String.format("%02x", E));
         //some math so text shows (needs improvement for greys)
-        ChangeHex.setHint(String.format("%02x", R)
+        ChangeHex.setText(String.format("%02x", R)
                 +String.format("%02x", G)+String.format("%02x", B));
         seekResultR.setProgress(T);
         seekResultG.setProgress(C);
@@ -111,10 +126,12 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         public void colorChanged(int color) {
             //ShowColor.setBackgroundColor(color);
             //show the color value
-            ShowColor.setText("0x"+String.format("%08x", color));
+            //ShowColor.setText("0x"+String.format("%08x", color));
             SeekR.setProgress(Color.red(color));
             SeekG.setProgress(Color.green(color));
             SeekB.setProgress(Color.blue(color));
         }
     }
+
+
 }
