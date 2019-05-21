@@ -45,17 +45,17 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         ShowColor=(Button)findViewById(R.id.buttonA);
         ShowComp=(Button)findViewById(R.id.buttonD);
         ShowHex=(TextView)findViewById(R.id.resultHex);
-        ChangeHex=(EditText)findViewById(R.id.hexEdit);
         //This activity implements SeekBar OnSeekBarChangeListener
         SeekR.setOnSeekBarChangeListener(this);
         SeekG.setOnSeekBarChangeListener(this);
         SeekB.setOnSeekBarChangeListener(this);
-        String content = ChangeHex.getText().toString(); //gets you the contents of edit text
-
-        ChangeHex.addTextChangedListener(new TextWatcher() {
+        EditText hexEdit =(EditText)findViewById(R.id.hexEdit);
+        public String[] strValue = hexEdit.getText().toString();
+        hexEdit.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                ShowColor.setBackgroundColor(Color.parseColor("#ffffff"));
+                if (strValue.length() == 6);
+
             }
 
             @Override
