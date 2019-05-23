@@ -16,8 +16,9 @@
         android:layout_marginTop="325dp"
         android:layout_marginBottom="-311dp"
         android:layout_toRightOf="@+id/labelG"
+        android:enabled="false"
         android:max="255"
-        android:progress="255" />
+        android:progress="0" />
 
     <TextView
         android:id="@+id/Title"
@@ -74,8 +75,9 @@
         android:layout_marginTop="297dp"
         android:layout_marginBottom="-292dp"
         android:layout_toRightOf="@+id/labelG"
+        android:enabled="false"
         android:max="255"
-        android:progress="255" />
+        android:progress="0" />
 
     <SeekBar
         android:id="@+id/seekResultR"
@@ -87,8 +89,9 @@
         android:layout_marginTop="278dp"
         android:layout_marginBottom="-264dp"
         android:layout_toRightOf="@+id/labelG"
+        android:enabled="false"
         android:max="255"
-        android:progress="255" />
+        android:progress="0" />
 
     <TextView
         android:id="@+id/labelB"
@@ -117,10 +120,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/seekB"
         android:layout_marginTop="20dp"
-        android:hint="Enter Hex"
-        android:inputType="number|text"
         android:digits="0123456789ABCDEFabcdef"
-        android:maxLength="6"/>
+        android:hint="ffffff"
+        android:inputType="number|text"
+        android:maxLength="6" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -155,33 +158,33 @@
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/resultR"
+        android:id="@+id/Red2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="10dp"
-        android:text="000"
+        android:text="0"
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/resultR2"
+        android:id="@+id/Green2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="34dp"
-        android:text="000"
+        android:text="0"
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/resultR3"
+        android:id="@+id/Blue2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="58dp"
-        android:text="000"
+        android:text="0"
         android:textSize="18sp" />
 
     <TextView
@@ -191,7 +194,7 @@
         android:layout_below="@+id/linearLayout"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="82dp"
-        android:text="000"
+        android:text="000000"
         android:textSize="18sp" />
 
     <TextView
@@ -242,7 +245,7 @@
             android:layout_centerHorizontal="true"
             android:layout_margin="24dp"
             android:layout_marginTop="-0dp"
-            android:background="@android:color/white"
+            android:background="@android:color/black"
             android:clickable="false"
             android:padding="24dp"
             android:textAlignment="center"
@@ -252,33 +255,33 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Green1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Title"
         android:layout_marginLeft="57dp"
         android:layout_marginTop="25dp"
-        android:text="000"
+        android:text="255"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/Red1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Title"
         android:layout_marginLeft="57dp"
         android:layout_marginTop="1dp"
-        android:text="000"
+        android:text="255"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/Blue1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Title"
+        android:layout_below="@+id/Green1"
         android:layout_marginLeft="57dp"
-        android:layout_marginTop="48dp"
-        android:text="000"
+        android:layout_marginTop="-1dp"
+        android:text="255"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
 </RelativeLayout>

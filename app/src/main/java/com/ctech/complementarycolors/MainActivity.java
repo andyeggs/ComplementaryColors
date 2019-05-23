@@ -25,6 +25,12 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     Button ShowComp;
     TextView ShowHex;
     EditText ChangeHex;
+    TextView red1;
+    TextView green1;
+    TextView blue1;
+    TextView red2;
+    TextView green2;
+    TextView blue2;
     Button SubmitButton;
 
 
@@ -45,6 +51,12 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         ShowComp=(Button)findViewById(R.id.buttonD);
         ShowHex=(TextView)findViewById(R.id.resultHex);
         ChangeHex=(EditText)findViewById(R.id.hexEdit);
+        red1=(TextView)findViewById(R.id.Red1);
+        green1=(TextView)findViewById(R.id.Green1);
+        blue1=(TextView)findViewById(R.id.Blue1);
+        red2=(TextView)findViewById(R.id.Red2);
+        green2=(TextView)findViewById(R.id.Green2);
+        blue2=(TextView)findViewById(R.id.Blue2);
         //This activity implements SeekBar OnSeekBarChangeListener
         SeekR.setOnSeekBarChangeListener(this);
         SeekG.setOnSeekBarChangeListener(this);
@@ -78,11 +90,22 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         //some math so text shows (needs improvement for greys)
         ChangeHex.setHint(String.format("%02x", R)
                 +String.format("%02x", G)+String.format("%02x", B));
+
+        red1.setText(String.format("%d", R));
+        green1.setText(String.format("%d", G));
+        blue1.setText(String.format("%d", B));
+
+        red2.setText(String.format("%d", T));
+        green2.setText(String.format("%d", C));
+        blue2.setText(String.format("%d", E));
+
         seekResultR.setProgress(T);
         seekResultG.setProgress(C);
         seekResultB.setProgress(E);
 
+
     }
+
     public void onStartTrackingTouch(SeekBar seekBar) {
         //Only required due to implements
     }
